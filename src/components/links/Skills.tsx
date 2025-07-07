@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
 interface NestedListTypes {
   heading: string;
@@ -63,6 +63,32 @@ const SkillCircle = ({skillName='.', size=10, verticalPlacement='top', horizonta
   )
 }
 
+const SkillsBox = ({ name }: { name: string }) => {
+  return (<div>
+
+      <div className="group inline-block max-w-[200px] bg-gradient-to-r from-light-blue-300 to-blue-50 rounded-md p-[1px] hover:bg-[#020618] hover:from-transparent hover:to-transparent shadow-none transition-all duration-500 ease-out hover:shadow-[rgb(197,255,255)_0px_0px_15px_2px] cursor-default">
+        <div className="bg-[#020618] text-white group-hover:text-blue-gray-100 px-3 py-2 rounded-md whitespace-normal break-words text-center">
+          { name }
+        </div>
+      </div>
+
+  </div>)
+}
+
+const SkillsBoxCategory = ({ children }: { children: ReactNode }) => {
+  return (
+    <div className='flex flex-wrap gap-x-6 gap-y-3 items-start justify-start content-start p-5 overflow-hidden w-full'>
+      { children }
+    </div>
+  )
+}
+
+const SkillsBoxCategoryDivider = () => (
+  <div className='w-[calc(100%-35px)] h-[.5px] rounded-full bg-blue-gray-800 mx-auto shadow-[rgb(197,255,255)_0px_0px_60px_3px]'>
+    <div className='w-[30%] h-[.5px] rounded-full bg-blue-gray-800 mx-auto shadow-[rgb(002,119,189)_0px_0px_50px_4px]' />
+  </div>
+)
+
 const NestedList = ({heading, list}: NestedListTypes) => (
   <li>
     <div>{heading}:</div>
@@ -89,11 +115,13 @@ const Skills: FC<{}> = () => {
         </div>
       </div>
 
-      <div className='grid grid-flow-row grid-cols-2 '>
+      <div className='grid grid-flow-row grid-cols-2 gap-x-5'>
 
-        <div className='grid grid-flow-row grid-cols-1 gap-6'>
+        <div className='relative grid grid-flow-row grid-cols-1 gap-6'>
 
-          <div className='grid grid-flow-row grid-cols-1 gap-3'>
+          {/* <div className='absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[6px] w-[50%] bg-light-blue-300 rounded-full blur-md opacity-80' /> */}
+
+          <div className='relative z-10 grid grid-flow-row grid-cols-1 gap-3'>
             <div className='text-3xl text-light-blue-200'>Frontend React Developer</div>
 
             <div className='text-sm text-justify text-blue-50/85'>With 1.5 years of hands-on experience in frontend development, I specialize in building dynamic, high-performance web applications using React.js. My focus is on crafting responsive, user-centric interfaces with modern tools like Tailwind CSS, complemented by UI libraries such as Ant Design, Material UI, and Material Tailwind.</div>
@@ -118,6 +146,13 @@ const Skills: FC<{}> = () => {
 
             <ul className='list-disc list-outside ml-7 mr-9 mt-1 space-y-2 text-justify text-sm text-blue-50/85'>
               <NestedList
+                heading='Programming Languages'
+                list={[
+                  {text: 'Javascript'},
+                  {text: 'Python'},
+                ]}
+              />
+              <NestedList
                 heading='Frontend Development'
                 list={[
                   {title: 'ReactJS', text: 'Primary expertise in it'},
@@ -134,13 +169,6 @@ const Skills: FC<{}> = () => {
                 ]}
               />
               <NestedList
-                heading='Programming Languages'
-                list={[
-                  {text: 'Javascript'},
-                  {text: 'Python'},
-                ]}
-              />
-              <NestedList
                 heading='Tools & DevOps (Familiarity)'
                 list={[
                   {title: 'Version Control', text: 'Git, GitHub'},
@@ -154,10 +182,49 @@ const Skills: FC<{}> = () => {
 
         </div>
 
+        <div className='pl-0 overflow-hidden w-full'>
 
+          <SkillsBoxCategory>
+            <SkillsBox name='JavaScript' />
+            <SkillsBox name='Python' />
+          </SkillsBoxCategory>
 
-        <div className='grid grid-flow-row grid-cols-3'>
-          <SkillCircle skillName='Python' size={20} verticalPlacement='center' horizontalPlacement='right' />
+          <SkillsBoxCategoryDivider />
+
+          <SkillsBoxCategory>
+            <SkillsBox name='NextJS' />
+            <SkillsBox name='ReactJS' />
+            <SkillsBox name='Redux' />
+            <SkillsBox name='React NativeJS' />
+          </SkillsBoxCategory>
+
+          <SkillsBoxCategoryDivider />
+
+          <SkillsBoxCategory>
+            <SkillsBox name='NodeJS' />
+            <SkillsBox name='ExpressJS' />
+            <SkillsBox name='GraphQL' />
+          </SkillsBoxCategory>
+
+          <SkillsBoxCategoryDivider />
+
+          <SkillsBoxCategory>
+            <SkillsBox name='MySQL' />
+            <SkillsBox name='MongoDB' />
+          </SkillsBoxCategory>
+
+          <SkillsBoxCategoryDivider />
+
+          <SkillsBoxCategory>
+            <SkillsBox name='GIT' />
+            <SkillsBox name='Linux CLI' />
+            <SkillsBox name='Docker' />
+            <SkillsBox name='jenkins' />
+          </SkillsBoxCategory>
+        
+        </div>
+        {/* <div className='grid grid-flow-row grid-cols-3'> */}
+          {/* <SkillCircle skillName='Python' size={20} verticalPlacement='center' horizontalPlacement='right' />
           <SkillCircle skillName='Java' size={16} horizontalPlacement='center' />
           <SkillCircle skillName='JavaScript' size={28} horizontalPlacement='center' />
           <SkillCircle skillName='HTML' size={16} verticalPlacement='center' horizontalPlacement='right' />
@@ -174,8 +241,8 @@ const Skills: FC<{}> = () => {
           <SkillCircle skillName='GIT' size={16} verticalPlacement='center' />
           <SkillCircle skillName='GitHub' size={20} horizontalPlacement='right' />
           <SkillCircle skillName='Linux CLI' size={24} verticalPlacement='bottom' horizontalPlacement='center' />
-          <SkillCircle skillName='Docker' size={20} horizontalPlacement='center' />
-        </div>
+          <SkillCircle skillName='Docker' size={20} horizontalPlacement='center' /> */}
+        {/* </div> */}
 
 
       </div>

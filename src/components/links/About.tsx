@@ -6,7 +6,7 @@ interface InfoDivType { heading: string; subHeading: string, duration: durationT
 interface InfoSectionType { children: ReactNode; heading: string}
 
 const InfoDiv: FC<InfoDivType> = ({ heading, subHeading, duration,  description, svg, link }) => (
-  <div className='group relative h-auto bg-gradient-to-r from-light-blue-300 to-blue-50 rounded-xl p-[1px] hover:from-[#020618] hover:to-[#020618] shadow-none transition-shadow duration-500 ease-out hover:shadow-[rgb(197,255,255)_0px_0px_15px_2px]'>
+  <div className='group relative h-auto bg-gradient-to-r from-light-blue-300 to-blue-50 rounded-xl p-[1px] hover:bg-[#020618] hover:from-transparent hover:to-transparent shadow-none transition-all duration-500 ease-out hover:shadow-[rgb(197,255,255)_0px_0px_15px_2px]'>
     <div className='absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[100%] w-[500px] bg-light-blue-300/85 blur-2xl opacity-20 rounded-full' />
     <div className='z-30 bg-[#020618] group-hover:bg-[#171717] rounded-xl px-20 py-12 flex flex-col gap-5'>
       <div className='flex flex-col gap-1'>
@@ -33,11 +33,11 @@ const InfoSection: FC<InfoSectionType> = ({ children, heading }) => (
     <div className='text-xl tracking-[.3rem] text-[#949cab] mb-10'>
       <span className='relative'>
         <span className='z-10'>{heading}</span>
-        <div className='absolute z-0 top-0 right-0 h-[3px] w-[30%] bg-light-blue-300 rounded-full blur-md opacity-80' />
+        <div className='absolute z-0 top-0 right-0 h-[6px] w-[30%] bg-light-blue-300 rounded-full blur-md opacity-80' />
         <div className='absolute z-0 top-1/4 right-0 h-[6px] w-[50%] bg-light-blue-300 rounded-full blur-md opacity-80' />
-        <div className='absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[8px] w-[50%] bg-light-blue-300 rounded-full blur-md opacity-80' />
+        <div className='absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[6px] w-[50%] bg-light-blue-300 rounded-full blur-md opacity-80' />
         <div className='absolute z-0 bottom-1/4 left-0 h-[6px] w-[50%] bg-light-blue-300 rounded-full blur-md opacity-80' />
-        <div className='absolute z-0 bottom-0 left-0 h-[3px] w-[30%] bg-light-blue-300 rounded-full blur-md opacity-80' />
+        <div className='absolute z-0 bottom-0 left-0 h-[6px] w-[30%] bg-light-blue-300 rounded-full blur-md opacity-80' />
         {/* <div className='absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[6px] w-full bg-blue-gray-300 rounded-full blur-lg' /> */}
       </span>
     </div>

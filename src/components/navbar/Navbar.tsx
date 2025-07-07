@@ -34,7 +34,7 @@ const Navbar: FC<{}> = () => {
             <NavLink href='/' title='home' />
             <NavLink href='/about' title='about' />
             <NavLink href='/skills' title='skills' />
-            <NavLink href='/projects' title='projects' />
+            {/* <NavLink href='/projects' title='projects' /> */}
             <NavLink href='/contact' title='contact' />
         </div>
         <div className="block lg:hidden">
