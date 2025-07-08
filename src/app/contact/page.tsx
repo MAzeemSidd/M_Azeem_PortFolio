@@ -1,4 +1,4 @@
-import Contact from "@/components/links/Contact"
+import Contact from "@/components/links/Contacts"
 import { FC } from "react"
 
 const page: FC<{}> = () => {

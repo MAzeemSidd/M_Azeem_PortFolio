@@ -41,7 +41,7 @@ const AnimatedText = () => {
 
 const Home = () => {
   return (
-    <div className='h-[calc(100vh-80px)] grid grid-cols-1 grid-rows-2 lg:grid-cols-12 grid-rows-1'>
+    <div className='h-[calc(100vh-80px)] grid grid-cols-1 grid-rows-1 sm:grid-rows-2 lg:grid-cols-12'>
       <div className='col-span-1 row-span-1 lg:row-span-2 lg:col-span-7 order-2 lg:order-1 h-full flex flex-col justify-center items-center mx-3 lg:ml-16 xl:ml-20 mt-10 lg:mt-0 z-0'>
         <div className='w-[75%] lg:w-auto'>
           <p className='text-xl xl:text-2xl lg:text-start tracking-wider'>Hi, This is</p>

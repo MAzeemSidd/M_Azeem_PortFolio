@@ -1,107 +1,6 @@
-import { FC, ReactNode } from 'react'
-
-interface NestedListTypes {
-  heading: string;
-  list?: {title?: string; text?: string}[];
-}
-
-const sizeClasses: Record<number, string> = {
-  10: 'size-10',
-  16: 'size-16',
-  20: 'size-20',
-  24: 'size-24',
-  28: 'size-28',
-  32: 'size-32',
-  40: 'size-40',
-};
-
-interface SkillCircleType {
-  skillName?: string;
-  size?: 10 | 16 | 20 | 24 | 28 |32 | 40;
-  verticalPlacement?: 'top' | 'center' | 'bottom';
-  horizontalPlacement?: 'left' | 'center' | 'right';
-}
-
-
-const SkillCircle = ({skillName='.', size=10, verticalPlacement='top', horizontalPlacement='left'}: SkillCircleType) => {
-  let verticalPlacementClass: string;
-  let horizontalPlacementClass: string;
-
-  switch(verticalPlacement) {
-    case 'center':
-      verticalPlacementClass = 'place-content-center';
-      break;
-    case 'bottom':
-      verticalPlacementClass = 'place-content-end';
-      break;
-    case 'top':
-    default:
-      verticalPlacementClass = 'place-content-start';
-  }
-
-  switch(horizontalPlacement) {
-    case 'center':
-      horizontalPlacementClass = 'place-self-center';
-      break;
-    case 'right':
-      horizontalPlacementClass = 'place-self-end';
-      break;
-    case 'left':
-    default:
-      horizontalPlacementClass = 'place-self-start';
-  }
-
-  return(
-    <div className={verticalPlacementClass}>
-      <div className={`${horizontalPlacementClass} ${sizeClasses[size]} rounded-full p-[2px]
-        bg-gradient-to-r from-blue-300 via-blue-100 to-light-blue-100`}>
-        <div className="w-full h-full rounded-full bg-[#030712] flex items-center justify-center text-md cursor-default">
-          {skillName}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const SkillsBox = ({ name }: { name: string }) => {
-  return (<div>
-
-      <div className="group inline-block max-w-[200px] bg-gradient-to-r from-light-blue-300 to-blue-50 rounded-md p-[1px] hover:bg-[#020618] hover:from-transparent hover:to-transparent shadow-none transition-all duration-500 ease-out hover:shadow-[rgb(197,255,255)_0px_0px_15px_2px] cursor-default">
-        <div className="bg-[#020618] text-white group-hover:text-blue-gray-100 px-3 py-2 rounded-md whitespace-normal break-words text-center">
-          { name }
-        </div>
-      </div>
-
-  </div>)
-}
-
-const SkillsBoxCategory = ({ children }: { children: ReactNode }) => {
-  return (
-    <div className='flex flex-wrap gap-x-6 gap-y-3 items-start justify-start content-start p-5 overflow-hidden w-full'>
-      { children }
-    </div>
-  )
-}
-
-const SkillsBoxCategoryDivider = () => (
-  <div className='w-[calc(100%-35px)] h-[.5px] rounded-full bg-blue-gray-800 mx-auto shadow-[rgb(197,255,255)_0px_0px_60px_3px]'>
-    <div className='w-[30%] h-[.5px] rounded-full bg-blue-gray-800 mx-auto shadow-[rgb(002,119,189)_0px_0px_50px_4px]' />
-  </div>
-)
-
-const NestedList = ({heading, list}: NestedListTypes) => (
-  <li>
-    <div>{heading}:</div>
-    <ul className='list-[square] list-outside ml-7 mr-9 mt-1 space-y-1 text-justify text-sm text-blue-50/75'>
-      {list?.map(item => (
-        <li>
-          {item.title && <span className='font-medium pr-1'>{item.title}:</span>}
-          <span className='font-light'>{item?.text}</span>
-        </li>
-      ))}
-    </ul>
-  </li>
-)
+import { FC } from 'react'
+import { NestedList } from './nested_list'
+import { SkillsBox, SkillsBoxCategory, SkillsBoxCategoryDivider } from './skills_box'
 
 const Skills: FC<{}> = () => {
   return (
@@ -155,7 +54,7 @@ const Skills: FC<{}> = () => {
               <NestedList
                 heading='Frontend Development'
                 list={[
-                  {title: 'ReactJS', text: 'Primary expertise in it'},
+                  {title: 'ReactJS', text: 'Primary expertise in React'},
                   {title: 'Styling', text: 'Tailwind CSS, Bootstrap and other UI libraries'},
                   {title: 'Core Web', text: 'JavaScript (ES6+), HTML5, CSS3'},
                 ]}
@@ -163,17 +62,17 @@ const Skills: FC<{}> = () => {
               <NestedList
                 heading='Backend & Databases (Basic Knowledge)'
                 list={[
-                  {title: 'Backend', text: 'Node.js, Express.js'},
-                  {title: 'SQL', text: 'MySQL'},
-                  {title: 'NoSQL', text: 'MongoDB'},
+                  {title: 'Backend', text: 'Academic project experience in Node.js, Express.js'},
+                  {title: 'RDBM', text: 'Knowledge of Rational Database specially MySQL'},
+                  {title: 'NoSQL', text: 'Hands-on experience of MongoDB in my FYP.'},
                 ]}
               />
               <NestedList
                 heading='Tools & DevOps (Familiarity)'
                 list={[
                   {title: 'Version Control', text: 'Git, GitHub'},
-                  {title: 'Containerization', text: 'Docker'},
-                  {text: 'Linux CLI'},
+                  {title: 'Containerization', text: 'containerization knowledge and hands-on practices with Docker'},
+                  {title: 'Command-line', text: 'Knowledge of Linux CLI commands.'},
                 ]}
               />
             </ul>
