@@ -23,12 +23,21 @@ const Navbar: FC<{}> = () => {
 
   return (
     <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-blue-gray-900/90 backdrop-blur-sm' : 'bg-transparent'
+      scrolled ? 'bg-black/40 backdrop-blur-sm' : 'bg-transparent'
     }`}>
       <div className="h-[80px] px-4 sm:px-8 md:px-16 lg:px-32 mx-auto flex items-center justify-between">
 
-        <div className="text-3xl font-medium text-transparent bg-clip-text bg-light-blue-100">
-          <Link href='/'>Portfolio</Link>
+        <div className="w-full max-w-[124px]">
+          <Link href='/'>
+            <div className="relative z-0 gap-0 h-[47px]">
+              <div className="absolute z-10 top-0 w-full text-center text-2xl font-semibold uppercase tracking-widest text-transparent bg-clip-text bg-light-blue-100">M.Azeem</div>
+              <div className="absolute z-10 bottom-0 w-full text-center text-sm font-normal capitalize tracking-[8px] px-[1px] text-transparent bg-clip-text bg-light-blue-200"> 
+                Portfolio
+                {/*** removing letter-spacing (tracking-[6.5px]) from the last letter ***/}
+                {/* <span className="-mr-[6.5px]">o</span> */}
+              </div>
+            </div>
+          </Link>
         </div>
         <div className="hidden lg:flex gap-14 justify-end">
             <NavLink href='/' title='home' />

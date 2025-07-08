@@ -18,7 +18,11 @@ const Skills: FC<{}> = () => {
 
         <div className='relative grid grid-flow-row grid-cols-1 gap-6'>
 
+          <div className='absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[90%] w-[.5px] blur-xl opacity-60 bg-light-blue-200 shadow-[rgb(002,119,189)_0px_0px_500px_20px]' />
+
           {/* <div className='absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[6px] w-[50%] bg-light-blue-300 rounded-full blur-md opacity-80' /> */}
+
+          {/* <div className='absolute z-0 top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 h-[50%] w-[1px] bg-light-blue-200 rounded-full blur-md opacity-80 shadow-[rgb(002,119,189)_0px_0px_500px_20px]' /> */}
 
           <div className='relative z-10 grid grid-flow-row grid-cols-1 gap-3'>
             <div className='text-3xl text-light-blue-200'>Frontend React Developer</div>
@@ -39,7 +43,9 @@ const Skills: FC<{}> = () => {
 
           </div>
 
-          <div className='grid grid-flow-row grid-cols-1 gap-3'>
+          <div className='relative z-10 grid grid-flow-row grid-cols-1 gap-3'>
+
+            {/* <div className='absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[80%] w-[.5px] blur-xl opacity-50 bg-light-blue-200 shadow-[rgb(002,119,189)_0px_0px_500px_20px]' /> */}
 
             <div className='text-xl text-light-blue-100'>Technical Expertise:</div>
 
@@ -54,16 +60,16 @@ const Skills: FC<{}> = () => {
               <NestedList
                 heading='Frontend Development'
                 list={[
-                  {title: 'ReactJS', text: 'Primary expertise in React'},
-                  {title: 'Styling', text: 'Tailwind CSS, Bootstrap and other UI libraries'},
-                  {title: 'Core Web', text: 'JavaScript (ES6+), HTML5, CSS3'},
+                  {title: 'ReactJS', text: 'Primary expertise in React.'},
+                  {title: 'Styling', text: 'Tailwind CSS, Bootstrap and other UI libraries.'},
+                  {title: 'Core Web', text: 'JavaScript (ES6+), HTML5, CSS3.'},
                 ]}
               />
               <NestedList
                 heading='Backend & Databases (Basic Knowledge)'
                 list={[
-                  {title: 'Backend', text: 'Academic project experience in Node.js, Express.js'},
-                  {title: 'RDBM', text: 'Knowledge of Rational Database specially MySQL'},
+                  {title: 'Backend', text: 'Academic project experience in Node.js, Express.js.'},
+                  {title: 'RDBM', text: 'Knowledge of Rational Database specially MySQL.'},
                   {title: 'NoSQL', text: 'Hands-on experience of MongoDB in my FYP.'},
                 ]}
               />
@@ -71,8 +77,9 @@ const Skills: FC<{}> = () => {
                 heading='Tools & DevOps (Familiarity)'
                 list={[
                   {title: 'Version Control', text: 'Git, GitHub'},
-                  {title: 'Containerization', text: 'containerization knowledge and hands-on practices with Docker'},
+                  {title: 'Containerization', text: 'containerization knowledge and hands-on practices with Docker.'},
                   {title: 'Command-line', text: 'Knowledge of Linux CLI commands.'},
+                  {title: 'CI/CD', text: 'Practical experience and knowledge of Jenkins.'},
                 ]}
               />
             </ul>
@@ -118,7 +125,7 @@ const Skills: FC<{}> = () => {
             <SkillsBox name='GIT' />
             <SkillsBox name='Linux CLI' />
             <SkillsBox name='Docker' />
-            <SkillsBox name='jenkins' />
+            <SkillsBox name='Jenkins' />
           </SkillsBoxCategory>
         
         </div>

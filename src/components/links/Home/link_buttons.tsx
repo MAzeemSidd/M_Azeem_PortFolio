@@ -1,12 +1,14 @@
-import { ReactNode } from "react";
+import Link from "next/link";
+import { FC, ReactNode } from "react";
 
+interface Contact_Btn_Type { href: string; }
 interface Site_Link_Path_Prop { d: string; }
 interface Site_Link_Circle_Prop { cx: string; cy: string; r: string; }
 // interface Site_Link_Rect_Prop { width: number; height: number; x: number; y: number; rx: number; }
-interface Site_Link_Btn_Prop { children: ReactNode; }
+interface Site_Link_Btn_Prop { children: ReactNode; href: string; }
 
-export const Contact_Btn = () => (
-  <button className="group relative font-medium rounded-full p-[2px] transition-all duration-500 ease-in-out bg-gradient-to-r from-light-blue-300 to-blue-50">
+export const Contact_Btn: FC<Contact_Btn_Type> = ({ href }) => (
+  <Link href={href} className="group relative font-medium rounded-full p-[2px] transition-all duration-500 ease-in-out bg-gradient-to-r from-light-blue-300 to-blue-50">
     <span className="relative inline-flex items-center gap-2 text-lg rounded-full py-2 px-5 transition-all duration-500 ease-in-out bg-[#030712] group-hover:bg-[length:200%_100%] bg-gradient-to-r from-light-blue-300/0 via-light-blue-300/0 to-light-blue-300/0 group-hover:from-light-blue-300 group-hover:to-light-blue-50">
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-light-blue-200 via-light-blue-200 to-light-blue-50 group-hover:text-[#030712] transition-colors duration-500 ease-in-out">
         Contact
@@ -35,7 +37,7 @@ export const Contact_Btn = () => (
         />
       </svg>
     </span>
-  </button>
+  </Link>
 )
 
 export const Site_Link_Path = ({ d }: Site_Link_Path_Prop) => (
@@ -59,8 +61,8 @@ export const Site_Link_Circle = ({ cx, cy, r }: Site_Link_Circle_Prop) => (
 //   />
 // )
 
-export const Site_Link_Btn = ({ children }: Site_Link_Btn_Prop) => (
-  <button className='group rounded-full p-2 ring-1 ring-blue-50 hover:bg-blue-50'>
+export const Site_Link_Btn: FC<Site_Link_Btn_Prop> = ({ children, href }) => (
+  <a href={href} target="_blank" className='group rounded-full p-2 ring-1 ring-blue-50 hover:bg-blue-50'>
     <svg
       xmlns="http://www.w3.org/2000/svg" fill="currentColor"
       data-name="Layer 1" viewBox="0 0 24 24"
@@ -68,5 +70,5 @@ export const Site_Link_Btn = ({ children }: Site_Link_Btn_Prop) => (
     >
       {children}
     </svg>
-  </button>
+  </a>
 )
