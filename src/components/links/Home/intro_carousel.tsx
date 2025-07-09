@@ -71,4 +71,7 @@ const IntroCarousel: FC<{}> = memo(() => {
   )
 })
 
+Description_Card.displayName = "Description_Card";
+IntroCarousel.displayName = "IntroCarousel";
+
 export default IntroCarousel
