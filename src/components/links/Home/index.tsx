@@ -1,31 +1,36 @@
-import IntroCarousel from "./intro_carousel"
-import Image from 'next/image'
-import dp from '../../../../public/pictures/my_dp_bg_transparent.png'
-import '@/app/globals.css'
 import { FC } from "react";
+import Image from 'next/image'
+
+import '@/app/globals.css'
+import IntroCarousel from "./intro_carousel"
 import { Contact_Btn, Site_Link_Btn, Site_Link_Circle, Site_Link_Path } from './link_buttons'
+import { DisplayPicture } from './display_picture'
 
 const Home: FC<{}> = () => {
   return (
     <div>
-      <div className='grid grid-rows-6 grid-cols-5 gap-2 h-[calc(100vh-80px)]'>
+      <div className='grid grid-rows-2 grid-cols-5 gap-2 h-auto lg:h-full lg:max-h-[calc(100vh-80px)] pb-20 pt-10 lg:py-0'>
 
         {/* left column with carousel */}
-        <div className='h-full row-span-5 col-span-5 lg:col-span-3 lg:ml-20 lg:mt-7 justify-self-center place-content-center w-[40rem]'>
+        <div className='lg:min-h-[calc(100vh-80px)] row-span-2 col-span-5 lg:col-span-3 lg:ml-20 w-full max-w-[40rem] place-content-center'>
           
-          <div className='grid grid-flow-row gap-2'>
+          <div className='grid grid-flow-row gap-5 md:gap-3 xl:gap-2'>
 
-            <div className="mx-7 py-0 my-0 text-3xl font-light">
-              {'Hi, This is '}
-              <span className="text-light-blue-100 font-medium">Muhammad Azeem</span>
+            <div className="mx-7 text-2xl sm:text-3xl font-light text-center sm:text-start">
+              <span>{'Hi, This is '}</span>
+              <div className="inline-block text-light-blue-100 font-medium">Muhammad Azeem</div>
+            </div>
+
+            <div className="lg:hidden text-center pt-2 pb-3">
+              <DisplayPicture />
             </div>
             
             <div className='mt-0 pb-18 relative'>
-              <div className='bg-blue-500/20 -z-10 w-[400px] h-[200px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl opacity-40' />
+              <div className='bg-blue-500/20 -z-10 w-[300px] h-[160px] sm:w-[400px] sm:h-[200px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl opacity-40' />
               <IntroCarousel />
             </div>
             
-            <div className='mx-7 flex items-center gap-7'>
+            <div className='mx-3 lg:mx-7 flex flex-wrap justify-center lg:justify-start gap-7'>
 
               {/* Contact Button */}
               <Contact_Btn href='/contact' />
@@ -64,20 +69,9 @@ const Home: FC<{}> = () => {
         
         </div>
         
-        {/* right column with display picture */}
-        <div className='h-full row-span-5 col-span-5 lg:col-span-2 lg:mr-20 justify-self-center place-content-center'>
-
-          <div className='relative flex justify-center items-start'>
-            <div className='bg-blue-500/20 -z-10 size-[200px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl opacity-40' />
-            <Image
-              src={dp}
-              alt="DP of M.Azeem"
-              width={280}
-              height={280}
-              className="rounded-full"
-            />
-          </div>
-        
+        {/* right column with display picture */} {/* col-span-5 */}
+        <div className='hidden lg:block lg:h-full lg:row-span-2 col-span-2 lg:mr-20 place-content-center'>
+          <DisplayPicture />
         </div>
 
       </div>
