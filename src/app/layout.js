@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased min-h-screen flex flex-col`}
+        className={`${poppins.className} antialiased min-h-screen w-full max-w-[1440px] flex flex-col`}
       >
         {/* bg-blue-500/50  */}
         <div className="-z-10 w-screen h-[10px] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[10px] blur-2xl" />
