@@ -3,9 +3,13 @@
 import Link from "next/link"
 import NavLink from '@/components/navbar/NavLink'
 import { FC, useState, useEffect } from 'react'
+import { Logo } from './logo'
+import { useDispatch } from "react-redux";
+import { setToggle, toggleDrawer } from "@/redux/feature/nav_drawer/toggle_drawer";
 
-const Navbar: FC<{}> = () => {
+export const Navbar: FC<{}> = () => {
   const [scrolled, setScrolled] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,16 +32,7 @@ const Navbar: FC<{}> = () => {
       <div className="h-[80px] px-4 sm:px-8 md:px-16 lg:px-32 mx-auto flex items-center justify-center lg:justify-between">
 
         <div className="w-full max-w-[124px]">
-          <Link href='/'>
-            <div className="relative z-0 gap-0 h-[47px]">
-              <div className="absolute z-10 top-0 w-full text-center text-2xl font-semibold uppercase tracking-widest text-transparent bg-clip-text bg-light-blue-100">M.Azeem</div>
-              <div className="absolute z-10 bottom-0 w-full text-center text-sm font-normal capitalize tracking-[8px] px-[1px] text-transparent bg-clip-text bg-light-blue-200"> 
-                Portfolio
-                {/*** removing letter-spacing (tracking-[6.5px]) from the last letter ***/}
-                {/* <span className="-mr-[6.5px]">o</span> */}
-              </div>
-            </div>
-          </Link>
+          <Logo />
         </div>
         <div className="hidden lg:flex gap-14 justify-end">
             <NavLink href='/' title='home' />
@@ -49,8 +44,11 @@ const Navbar: FC<{}> = () => {
 
 
         <div className="lg:hidden">
-          <div className="absolute top-0 right-1 h-full max-h-[80px] place-content-center">
-            <button className="ring-[.5px] ring-light-blue-100/50 text-light-blue-100/50 rounded-md p-1">
+          <div className="absolute top-0 left-5 h-full max-h-[80px] place-content-center">
+            <button
+              onClick={() => dispatch(setToggle(true))}
+              className="ring-[.5px] ring-light-blue-100/50 text-light-blue-100/50 rounded-md p-1"
+            >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
                 <path fillRule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
               </svg>
@@ -62,5 +60,3 @@ const Navbar: FC<{}> = () => {
     </div>
   )
 }
-
-export default Navbar

@@ -4,7 +4,7 @@ import { BuildingSVG, BriefcaseSVG } from './svgs'
 
 const About: FC<{}> = () => {
   return (
-    <div className='h-auto overflow-x-hidden grid grid-flow-row grid-cols-1 pt-5 pb-16'>
+    <div className='h-auto overflow-x-hidden grid grid-flow-row grid-cols-1 pt-3 lg:pt-5 pb-16'>
       <InfoSection heading='Working Experience'>
         <InfoDiv
           heading='Reactjs Developer'

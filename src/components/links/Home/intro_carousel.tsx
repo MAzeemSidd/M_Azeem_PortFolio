@@ -13,10 +13,10 @@ interface DescriptionCardProps {
 }
 
 const Description_Card: FC<DescriptionCardProps> = memo(({ title, description }) => (
-  <CustomCard className='my-0 py-0 w-auto mx-0 bg-transparent shadow-none text-justify'>
+  <CustomCard className='w-auto bg-transparent shadow-none text-center lg:text-justify'>
       <CustomCardBody className='grid grid-cols-1 gap-4 pt-0'>
           <div>
-            <div className='inline-block font-normal tracking-[.2rem] text-4xl sm:text-6xl text-wrap text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-100 to-light-blue-100 py-[.45rem]' style={{ whiteSpace: 'pre-line' }}>{title}</div>
+            <div className='inline-block font-normal tracking-[.2rem] text-4xl sm:text-5xl lg:text-6xl whitespace-pre-line text-wrap text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-100 to-light-blue-100 py-[.45rem]'>{title}</div>
           </div>
           <div className='text-blue-50/85 text-base font-light'>{description}</div>
       </CustomCardBody>

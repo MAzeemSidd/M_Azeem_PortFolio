@@ -1,6 +1,4 @@
 import { FC } from "react";
-import Image from 'next/image'
-
 import '@/app/globals.css'
 import IntroCarousel from "./intro_carousel"
 import { Contact_Btn, Site_Link_Btn, Site_Link_Circle, Site_Link_Path } from './link_buttons'
@@ -9,12 +7,12 @@ import { DisplayPicture } from './display_picture'
 const Home: FC<{}> = () => {
   return (
     <div>
-      <div className='grid grid-rows-2 grid-cols-5 gap-2 h-auto lg:h-full lg:max-h-[calc(100vh-80px)] pb-20 pt-10 lg:py-0'>
+      <div className='grid grid-cols-1 lg:grid-cols-5 lg:grid-rows-2 gap-2 h-auto lg:h-[calc(100vh-80px)] py-10'>
 
         {/* left column with carousel */}
-        <div className='lg:min-h-[calc(100vh-80px)] row-span-2 col-span-5 lg:col-span-3 lg:ml-20 w-full max-w-[40rem] place-content-center'>
+        <div className='w-full lg:col-span-3 lg:row-span-2 lg:ml-20 flex flex-col justify-center items-center lg:items-start px-4 sm:px-6 max-w-full'>
           
-          <div className='grid grid-flow-row gap-5 md:gap-3 xl:gap-2'>
+          <div className='grid grid-rows-[min-content_auto] place-items-center lg:place-items-start gap-5 md:gap-3 xl:gap-2'>
 
             <div className="mx-7 text-2xl sm:text-3xl font-light text-center sm:text-start">
               <span>{'Hi, This is '}</span>
@@ -25,7 +23,7 @@ const Home: FC<{}> = () => {
               <DisplayPicture />
             </div>
             
-            <div className='mt-0 pb-18 relative'>
+            <div className='relative pb-10'>
               <div className='bg-blue-500/20 -z-10 w-[300px] h-[160px] sm:w-[400px] sm:h-[200px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl opacity-40' />
               <IntroCarousel />
             </div>
@@ -70,7 +68,7 @@ const Home: FC<{}> = () => {
         </div>
         
         {/* right column with display picture */} {/* col-span-5 */}
-        <div className='hidden lg:block lg:h-full lg:row-span-2 col-span-2 lg:mr-20 place-content-center'>
+        <div className='hidden lg:block lg:h-full lg:row-span-2 lg:col-span-2 lg:mr-20 w-0 lg:w-full place-content-center'>
           <DisplayPicture />
         </div>
 
