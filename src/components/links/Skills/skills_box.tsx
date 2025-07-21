@@ -6,7 +6,7 @@ export const SkillsBox: FC<SkillsBoxTypes> = ({ name }) => {
   return (<div>
 
       <div className="group inline-block max-w-[200px] bg-gradient-to-r from-light-blue-300 to-blue-50 rounded-md p-[1px] hover:bg-[#020618] hover:from-transparent hover:to-transparent shadow-none transition-all duration-500 ease-out hover:shadow-[rgb(197,255,255)_0px_0px_15px_2px] cursor-default">
-        <div className="bg-[#020618] text-white group-hover:text-blue-gray-100 px-3 py-2 rounded-md whitespace-normal break-words text-center">
+        <div className="bg-[#020618] text-white text-sm md:text-base group-hover:text-blue-gray-100 px-2.5 md:px-3 py-1.5 md:py-2 rounded-md whitespace-normal break-words text-center">
           { name }
         </div>
       </div>
@@ -18,7 +18,7 @@ interface SkillsBoxCategoryTypes { children: ReactNode; }
 
 export const SkillsBoxCategory: FC<SkillsBoxCategoryTypes> = ({ children }) => {
   return (
-    <div className='flex flex-wrap gap-x-6 gap-y-3 items-start justify-start content-start p-5 overflow-hidden w-full'>
+    <div className='flex flex-wrap gap-6 p-5 w-full'>
       { children }
     </div>
   )
