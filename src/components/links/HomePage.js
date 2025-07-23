@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import { useState, useEffect } from 'react'
 
 const AnimatedText = () => {
@@ -70,7 +71,7 @@ const Home = () => {
       <div className='col-span-1 row-span-1 lg:row-span-2 lg:col-span-5 order-1 lg:order-2 relative flex justify-center items-center'>
         <div>
           <div className='bg-gradient-to-r from-emerald-500 to-blue-500 -z-10 size-[170px] lg:size-[220px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl opacity-40'></div>
-          <img src='pictures/my_dp_bg_transparent.png' alt='Display Picture' className='rounded-full z-0 w-[250px] lg:w-[300px]' />
+          <Image src='pictures/my_dp_bg_transparent.png' alt='Display Picture' className='rounded-full z-0 w-[250px] lg:w-[300px]' />
         </div>
       </div>
     </div>

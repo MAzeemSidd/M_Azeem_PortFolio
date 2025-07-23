@@ -1,13 +1,9 @@
-'use client'
-
-import { FC, memo } from "react";
-
 interface NestedListTypes {
   category: string;
   skills?: {title: string; text?: string}[];
 }
 
-export const NestedList: FC<NestedListTypes> = memo(({category, skills}) => (
+export const NestedList = ({category, skills}: NestedListTypes) => (
   <li className='pb-3 flex flex-col justify-start gap-3'>
     <div>{category}:</div>
     <ul className='list-[square] list-outside ml-3 mr-2 md:ml-7 lg:mr-9 space-y-3 text-sm text-blue-50/75'>
@@ -21,4 +17,4 @@ export const NestedList: FC<NestedListTypes> = memo(({category, skills}) => (
       ))}
     </ul>
   </li>
-));
+);
