@@ -1,5 +1,5 @@
 const MainSVG = ({ d }: { d: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 16 16">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
     <path fill="currentColor" fillRule="evenodd" d={d} />
   </svg>
 )
@@ -30,8 +30,8 @@ export const LinkedInSVG = () => (
 
 interface SVGTypes { width?: number; height?: number; }
 
-export const CopySVG = ({ width=23, height=23 }: SVGTypes) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24">
+export const CopySVG = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
       <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
       <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
@@ -39,8 +39,14 @@ export const CopySVG = ({ width=23, height=23 }: SVGTypes) => (
   </svg>
 )
 
-export const MailSVG = ({ width=23, height=23 }: SVGTypes) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24">
+export const CopiedSVG = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 6L9 17l-5-5" />
+  </svg>
+)
+
+export const MailSVG = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
       <path d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
       <rect width="20" height="16" x="2" y="4" rx="2" />
@@ -48,8 +54,20 @@ export const MailSVG = ({ width=23, height=23 }: SVGTypes) => (
   </svg>
 )
 
-export const GotoSVG = ({ width=23, height=23 }: SVGTypes) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24">
+export const VisitWebsiteSVG = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6m10 0l-9 9m3-9h6v6" />
+  </svg>
+)
+
+export const SendMailSVG = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zm7.318-19.539l-10.94 10.939" />
+  </svg>
+)
+
+export const CallingSVG = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 2a9 9 0 0 1 9 9m-9-5a5 5 0 0 1 5 5m-4.168 5.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233a14 14 0 0 0 6.392 6.384" />
   </svg>
 )

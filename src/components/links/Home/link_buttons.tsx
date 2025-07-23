@@ -5,7 +5,6 @@ interface Contact_Btn_Type { href: string; }
 interface Site_Link_Path_Prop { d: string; }
 interface Site_Link_Circle_Prop { cx: string; cy: string; r: string; }
 // interface Site_Link_Rect_Prop { width: number; height: number; x: number; y: number; rx: number; }
-interface Site_Link_Btn_Prop { children: ReactNode; href: string; }
 
 export const Contact_Btn: FC<Contact_Btn_Type> = ({ href }) => (
   <Link href={href} className="group relative font-medium rounded-full p-[2px] transition-all duration-500 ease-in-out bg-gradient-to-r from-light-blue-300 to-blue-50">
@@ -60,15 +59,3 @@ export const Site_Link_Circle = ({ cx, cy, r }: Site_Link_Circle_Prop) => (
 //     className="transition-all duration-500 text-blue-50 group-hover:text-[#030712]"
 //   />
 // )
-
-export const Site_Link_Btn: FC<Site_Link_Btn_Prop> = ({ children, href }) => (
-  <a href={href} target="_blank" className='group rounded-full p-2 ring-1 ring-blue-50 hover:bg-blue-50'>
-    <svg
-      xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-      data-name="Layer 1" viewBox="0 0 24 24"
-      className='size-5 transition-colors duration-500 ease-in-out text-blue-50'
-    >
-      {children}
-    </svg>
-  </a>
-)

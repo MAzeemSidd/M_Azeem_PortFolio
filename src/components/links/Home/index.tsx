@@ -1,7 +1,8 @@
 import { FC } from "react";
 import '@/app/globals.css'
 import IntroCarousel from "./intro_carousel"
-import { Contact_Btn, Site_Link_Btn, Site_Link_Circle, Site_Link_Path } from './link_buttons'
+import { Contact_Btn, Site_Link_Circle, Site_Link_Path } from './link_buttons'
+import { Site_Link_Btn } from "./site_link_btn";
 import { DisplayPicture } from './display_picture'
 
 const Home: FC<{}> = () => {
@@ -23,12 +24,12 @@ const Home: FC<{}> = () => {
               <DisplayPicture />
             </div>
             
-            <div className='relative pb-10'>
+            <div className='relative'>
               <div className='bg-blue-500/20 -z-10 w-[300px] h-[160px] sm:w-[400px] sm:h-[200px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl opacity-40' />
               <IntroCarousel />
             </div>
             
-            <div className='mx-3 lg:mx-7 flex flex-wrap justify-center lg:justify-start gap-7'>
+            <div className='mx-3 lg:ml-7 lg:mb-7 flex flex-wrap justify-center lg:justify-start gap-7'>
 
               {/* Contact Button */}
               <Contact_Btn href='/contact' />
