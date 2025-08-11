@@ -5,7 +5,20 @@ import { Contact_Btn, Site_Link_Circle, Site_Link_Path } from './link_buttons'
 import { Site_Link_Btn } from "./site_link_btn";
 import { DisplayPicture } from './display_picture'
 
-const Home: FC<{}> = () => {
+type Attribute = {
+  _id: string;
+  title: string;
+  description: string;
+}
+
+const Home: FC<{}> = async () => {
+  const res = await fetch("http://localhost:3000/api/attributes", {
+    cache: "no-store", // optional: prevents data caching in dev
+  });
+  const attributes: Attribute[] = await res.json();
+
+  console.log('attributes =====> ', attributes)
+
   return (
     <div>
       <div className='grid grid-cols-1 lg:grid-cols-5 lg:grid-rows-2 gap-2 h-auto lg:h-[calc(100vh-80px)] py-10'>
