@@ -5,19 +5,17 @@ import { Contact_Btn, Site_Link_Circle, Site_Link_Path } from './link_buttons'
 import { Site_Link_Btn } from "./site_link_btn";
 import { DisplayPicture } from './display_picture'
 
-type Attribute = {
+export type Attribute = {
   _id: string;
   title: string;
   description: string;
 }
 
 const Home: FC<{}> = async () => {
-  const res = await fetch("http://localhost:3000/api/attributes", {
+  const res = await fetch("http://localhost:3000/api/collections/attributes", {
     cache: "no-store", // optional: prevents data caching in dev
   });
   const attributes: Attribute[] = await res.json();
-
-  console.log('attributes =====> ', attributes)
 
   return (
     <div>
@@ -39,7 +37,7 @@ const Home: FC<{}> = async () => {
             
             <div className='relative'>
               <div className='bg-blue-500/20 -z-10 w-[300px] h-[160px] sm:w-[400px] sm:h-[200px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl opacity-40' />
-              <IntroCarousel />
+              <IntroCarousel attributes={attributes} />
             </div>
             
             <div className='mx-3 lg:ml-7 lg:mb-7 flex flex-wrap justify-center lg:justify-start gap-7'>
