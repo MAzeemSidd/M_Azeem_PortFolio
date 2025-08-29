@@ -6,12 +6,12 @@ const ALLOWED_COLLECTIONS: string[] = ['attributes', 'working_exp', 'academic_in
 
 interface Params {
   collection: string;
-  multiple?: string;
 }
 
-export async function GET(request: NextRequest, { params }: { params: Params }): Promise<NextResponse> {
+export async function GET(request: NextRequest, { params }: { params: Promise<Params> }): Promise<NextResponse> {
   try {
-    const { collection } = params;
+    // await params, since it is a promise in Next.js 13+ version
+    const { collection } = await params;
     const { searchParams } = new URL(request.url);
     const multiple = searchParams.get('multiple');
 
